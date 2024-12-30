@@ -1,0 +1,9 @@
+[run]
+branch = True
+
+include =
+    ../src/models/*
+
+omit =
+    ../src/models/*init*
+    ../src/*init*

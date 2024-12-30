@@ -1,0 +1,33 @@
+default:
+  tags:
+    - CREMI 
+    - Focal/Fossa
+
+stages:
+  - build
+  - test
+  - coverage
+
+buid-job1:
+  stage: build
+  script :
+    - pip install coverage
+
+test-job1:
+  stage: test
+  script :
+    - cd test/
+    - python3 -m unittest -v test_unitaire.py
+
+coverage-job1:
+  stage: coverage
+  script :
+    - cd test/
+    - coverage run -m unittest
+    - coverage run -m pytest test_unitaire.py
+    - coverage report -m
+
+
+
+
+
